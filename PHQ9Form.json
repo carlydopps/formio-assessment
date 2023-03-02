@@ -139,7 +139,7 @@
                             "value": ""
                           }
                         ],
-                        "content": "Over the last 2 weeks, how often have you been bothered by any of the following problems?\n<br>\n<em>(Use the checkmark to indicate you answer)</em>",
+                        "content": "Over the last 2 weeks, how often have you been bothered by any of the following problems?\n<br>\n<em>(Indicate you answers in the survey below)</em>",
                         "refreshOnChange": false,
                         "key": "html",
                         "type": "htmlelement",
@@ -358,7 +358,7 @@
                             "autoExpand": false,
                             "disabled": true,
                             "tableView": true,
-                            "calculateValue": "severity = \"\"\n\nif (data.total == 0) {\n  severity = \"The patient's score is below the minimum depression severity scale.\"\n} else if (data.total >= 1 && data.total <= 4) {\n  severity = \"Minimal depression\"\n} else if (data.total >= 5 && data.total <= 9) {\n  severity = \"Mild depression\"\n} else if (data.total >= 10 && data.total <= 14) {\n  severity = \"Moderate depression\"\n} else if (data.total >= 15 && data.total <= 19) {\n  severity = \"Moderately severe depression\"\n} else if (data.total >= 20 && data.total <= 27) {\n  severity = \"Severe depression\"\n}\n\nvalue = severity",
+                            "calculateValue": "severity = \"\"\n\nif (data.total == 0) {\n  severity = \"Score is below the minimum depression severity scale\"\n} else if (data.total >= 1 && data.total <= 4) {\n  severity = \"Minimal depression\"\n} else if (data.total >= 5 && data.total <= 9) {\n  severity = \"Mild depression\"\n} else if (data.total >= 10 && data.total <= 14) {\n  severity = \"Moderate depression\"\n} else if (data.total >= 15 && data.total <= 19) {\n  severity = \"Moderately severe depression\"\n} else if (data.total >= 20 && data.total <= 27) {\n  severity = \"Severe depression\"\n}\n\nvalue = severity",
                             "key": "depressionSeverity",
                             "type": "textarea",
                             "rows": 1,
