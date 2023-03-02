@@ -1,532 +1,577 @@
 {
-    "display": "form",
-    "components": [
-      {
-        "label": "Tabs",
-        "components": [
-          {
-            "label": "PHQ-9 Form",
-            "key": "phq9Form",
-            "components": [
-              {
-                "label": "HTML",
-                "tag": "h1",
-                "className": "bg-primary text-white",
-                "attrs": [
-                  {
-                    "attr": "align",
-                    "value": "center"
-                  }
-                ],
-                "content": "<br>Patient Health Questionnaire (PHQ-9)<br><br>",
-                "refreshOnChange": false,
-                "key": "formHeader",
-                "type": "htmlelement",
-                "input": false,
-                "tableView": false
-              },
-              {
-                "label": "Columns",
-                "columns": [
-                  {
-                    "components": [
-                      {
-                        "label": "ID #",
-                        "placeholder": "Enter your ID #",
-                        "mask": false,
-                        "autofocus": true,
-                        "tableView": false,
-                        "delimiter": false,
-                        "requireDecimal": false,
-                        "inputFormat": "plain",
-                        "truncateMultipleSpaces": false,
-                        "validate": {
-                          "required": true
-                        },
-                        "key": "idNum",
-                        "attributes": {
-                          "display": "flex"
-                        },
-                        "type": "number",
-                        "input": true
-                      }
-                    ],
-                    "width": 6,
-                    "offset": 0,
-                    "push": 0,
-                    "pull": 0,
-                    "size": "md",
-                    "currentWidth": 6
-                  },
-                  {
-                    "components": [
-                      {
-                        "label": "Date",
-                        "format": "MM-dd-yyyy",
-                        "tableView": false,
-                        "datePicker": {
-                          "disableWeekends": false,
-                          "disableWeekdays": false
-                        },
+  "display": "form",
+  "components": [
+    {
+      "label": "Tabs",
+      "components": [
+        {
+          "label": "PHQ-9 Form",
+          "key": "phq9Form",
+          "components": [
+            {
+              "label": "HTML",
+              "tag": "h1",
+              "className": "bg-primary text-white",
+              "attrs": [
+                {
+                  "attr": "align",
+                  "value": "center"
+                }
+              ],
+              "content": "<br>Patient Health Questionnaire (PHQ-9)<br><br>",
+              "refreshOnChange": false,
+              "key": "formHeader",
+              "type": "htmlelement",
+              "input": false,
+              "tableView": false
+            },
+            {
+              "label": "Columns",
+              "columns": [
+                {
+                  "components": [
+                    {
+                      "label": "ID #",
+                      "placeholder": "Enter your ID #",
+                      "mask": false,
+                      "autofocus": true,
+                      "tableView": false,
+                      "delimiter": false,
+                      "requireDecimal": false,
+                      "inputFormat": "plain",
+                      "truncateMultipleSpaces": false,
+                      "validate": {
+                        "required": true
+                      },
+                      "key": "idNum",
+                      "attributes": {
+                        "display": "flex"
+                      },
+                      "type": "number",
+                      "input": true
+                    }
+                  ],
+                  "width": 6,
+                  "offset": 0,
+                  "push": 0,
+                  "pull": 0,
+                  "size": "md",
+                  "currentWidth": 6
+                },
+                {
+                  "components": [
+                    {
+                      "label": "Date",
+                      "format": "MM-dd-yyyy",
+                      "tableView": false,
+                      "datePicker": {
+                        "disableWeekends": false,
+                        "disableWeekdays": false
+                      },
+                      "enableTime": false,
+                      "timePicker": {
+                        "showMeridian": false
+                      },
+                      "validate": {
+                        "required": true
+                      },
+                      "enableMinDateInput": false,
+                      "enableMaxDateInput": false,
+                      "key": "date",
+                      "type": "datetime",
+                      "input": true,
+                      "widget": {
+                        "type": "calendar",
+                        "displayInTimezone": "viewer",
+                        "locale": "en",
+                        "useLocaleSettings": false,
+                        "allowInput": true,
+                        "mode": "single",
                         "enableTime": false,
-                        "timePicker": {
-                          "showMeridian": false
-                        },
-                        "validate": {
-                          "required": true
-                        },
-                        "enableMinDateInput": false,
-                        "enableMaxDateInput": false,
-                        "key": "date",
-                        "type": "datetime",
-                        "input": true,
-                        "widget": {
-                          "type": "calendar",
-                          "displayInTimezone": "viewer",
-                          "locale": "en",
-                          "useLocaleSettings": false,
-                          "allowInput": true,
-                          "mode": "single",
-                          "enableTime": false,
-                          "noCalendar": false,
-                          "format": "MM-dd-yyyy",
-                          "hourIncrement": 1,
-                          "minuteIncrement": 1,
-                          "time_24hr": true,
-                          "minDate": null,
-                          "disableWeekends": false,
-                          "disableWeekdays": false,
-                          "maxDate": null
+                        "noCalendar": false,
+                        "format": "MM-dd-yyyy",
+                        "hourIncrement": 1,
+                        "minuteIncrement": 1,
+                        "time_24hr": true,
+                        "minDate": null,
+                        "disableWeekends": false,
+                        "disableWeekdays": false,
+                        "maxDate": null
+                      }
+                    }
+                  ],
+                  "width": 6,
+                  "offset": 0,
+                  "push": 0,
+                  "pull": 0,
+                  "size": "md",
+                  "currentWidth": 6
+                }
+              ],
+              "key": "columns",
+              "type": "columns",
+              "input": false,
+              "tableView": false
+            },
+            {
+              "title": "",
+              "theme": "primary",
+              "collapsible": false,
+              "key": "patientSurvey",
+              "type": "panel",
+              "label": "Panel",
+              "input": false,
+              "tableView": false,
+              "components": [
+                {
+                  "legend": "Patient Survey",
+                  "key": "fieldSet",
+                  "type": "fieldset",
+                  "label": "Field Set",
+                  "input": false,
+                  "tableView": false,
+                  "components": [
+                    {
+                      "label": "HTML",
+                      "attrs": [
+                        {
+                          "attr": "",
+                          "value": ""
                         }
-                      }
-                    ],
-                    "width": 6,
-                    "offset": 0,
-                    "push": 0,
-                    "pull": 0,
-                    "size": "md",
-                    "currentWidth": 6
-                  }
-                ],
-                "key": "columns",
-                "type": "columns",
-                "input": false,
-                "tableView": false
-              },
-              {
-                "title": "",
-                "theme": "primary",
-                "collapsible": false,
-                "key": "patientSurvey",
-                "type": "panel",
-                "label": "Panel",
-                "input": false,
-                "tableView": false,
-                "components": [
-                  {
-                    "legend": "Patient Survey",
-                    "key": "fieldSet",
-                    "type": "fieldset",
-                    "label": "Field Set",
-                    "input": false,
-                    "tableView": false,
-                    "components": [
-                      {
-                        "label": "HTML",
-                        "attrs": [
-                          {
-                            "attr": "",
-                            "value": ""
-                          }
-                        ],
-                        "content": "Over the last 2 weeks, how often have you been bothered by any of the following problems?\n<br>\n<em>(Indicate you answers in the survey below)</em>",
-                        "refreshOnChange": false,
-                        "key": "html",
-                        "type": "htmlelement",
-                        "input": false,
-                        "tableView": false
-                      },
-                      {
-                        "label": "Initial Questions",
-                        "key": "initialQuestions",
-                        "type": "well",
-                        "input": false,
-                        "tableView": false,
-                        "components": [
-                          {
-                            "label": "Survey",
-                            "hideLabel": true,
-                            "tableView": false,
-                            "questions": [
-                              {
-                                "label": "1. Little interest or pleasure in doing things",
-                                "value": "q1",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "2. Feeling down, depressed, or hopeless",
-                                "value": "q2",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "3. Trouble falling or staying asleep, or sleeping too much",
-                                "value": "q3",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "4. Feeling tired or having little energy",
-                                "value": "q4",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "5. Poor appetite or overeating",
-                                "value": "q5",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "6. Feeling bad about yourself - or that you are a failure or have let yourself or your family down",
-                                "value": "q6",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "7. Trouble concentrating on things, such as reading the newspaper or watching television",
-                                "value": "q7",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "8. Moving or speaking so slowly that other people could have noticed. Or the opposite - being so figety or restless that you have been moving around a lot more than usual",
-                                "value": "q8",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "9. Thoughts that you would be better off dead, or of hurting yourself",
-                                "value": "q9",
-                                "tooltip": ""
-                              }
-                            ],
-                            "values": [
-                              {
-                                "label": "Not at all",
-                                "value": "0",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "Several Days",
-                                "value": "1",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "More than half the days",
-                                "value": "2",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "Nearly every day",
-                                "value": "3",
-                                "tooltip": ""
-                              }
-                            ],
-                            "validate": {
-                              "required": true
+                      ],
+                      "content": "Over the last 2 weeks, how often have you been bothered by any of the following problems?\n<br>\n<em>(Indicate you answers in the survey below)</em>",
+                      "refreshOnChange": false,
+                      "key": "html",
+                      "type": "htmlelement",
+                      "input": false,
+                      "tableView": false
+                    },
+                    {
+                      "label": "Initial Questions",
+                      "key": "initialQuestions",
+                      "type": "well",
+                      "input": false,
+                      "tableView": false,
+                      "components": [
+                        {
+                          "label": "Survey",
+                          "hideLabel": true,
+                          "tableView": false,
+                          "questions": [
+                            {
+                              "label": "1. Little interest or pleasure in doing things",
+                              "value": "q1",
+                              "tooltip": ""
                             },
-                            "key": "survey",
-                            "type": "survey",
-                            "input": true
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Additional field",
-                        "hideLabel": true,
-                        "key": "additionalField",
-                        "type": "well",
-                        "input": false,
-                        "tableView": false,
-                        "components": [
-                          {
-                            "label": "Survey 2",
-                            "hideLabel": true,
-                            "tableView": false,
-                            "questions": [
-                              {
-                                "label": "10. If you checked off <em>any questions</em>, how <em>difficult</em> have these problems made it for you to do you work, take care of things at home, or get along with other people?",
-                                "value": "q10",
-                                "tooltip": ""
-                              }
-                            ],
-                            "values": [
-                              {
-                                "label": "Not difficult at all",
-                                "value": "notDifficultAtAll",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "Somewhat difficult",
-                                "value": "somewhatDifficult",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "Very difficult",
-                                "value": "veryDifficult",
-                                "tooltip": ""
-                              },
-                              {
-                                "label": "Extremely difficult",
-                                "value": "extremelyDifficult",
-                                "tooltip": ""
-                              }
-                            ],
-                            "validate": {
-                              "required": true
+                            {
+                              "label": "2. Feeling down, depressed, or hopeless",
+                              "value": "q2",
+                              "tooltip": ""
                             },
-                            "key": "survey2",
-                            "type": "survey",
-                            "input": true
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "View Results",
-                "theme": "success",
-                "collapsible": true,
-                "key": "phq9Form",
-                "type": "panel",
-                "label": "Panel",
-                "collapsed": true,
-                "input": false,
-                "tableView": false,
-                "components": [
-                  {
-                    "legend": "Results",
-                    "key": "fieldSet2",
-                    "type": "fieldset",
-                    "label": "Field Set",
-                    "input": false,
-                    "tableView": false,
-                    "components": [
-                      {
-                        "label": "Note",
-                        "attrs": [
-                          {
-                            "attr": "",
-                            "value": ""
-                          }
-                        ],
-                        "content": "<em>Healthcare professional: Interpretation of the total score is determined based off the accompanying score card for reference.</em>",
-                        "refreshOnChange": false,
-                        "key": "note",
-                        "type": "htmlelement",
-                        "input": false,
-                        "tableView": false
-                      },
-                      {
-                        "label": "Results",
-                        "key": "results2",
-                        "type": "well",
-                        "input": false,
-                        "tableView": false,
-                        "components": [
-                          {
-                            "label": "<b>Total Score</b>",
-                            "autoExpand": false,
-                            "spellcheck": false,
-                            "disabled": true,
-                            "tableView": true,
-                            "calculateValue": "total = 0;\nfor (const i in data.survey) {\n  total += parseInt(data.survey[i]);\n}\nvalue = String(total);",
-                            "key": "total",
-                            "type": "textarea",
-                            "rows": 1,
-                            "input": true
+                            {
+                              "label": "3. Trouble falling or staying asleep, or sleeping too much",
+                              "value": "q3",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "4. Feeling tired or having little energy",
+                              "value": "q4",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "5. Poor appetite or overeating",
+                              "value": "q5",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "6. Feeling bad about yourself - or that you are a failure or have let yourself or your family down",
+                              "value": "q6",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "7. Trouble concentrating on things, such as reading the newspaper or watching television",
+                              "value": "q7",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "8. Moving or speaking so slowly that other people could have noticed. Or the opposite - being so figety or restless that you have been moving around a lot more than usual",
+                              "value": "q8",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "9. Thoughts that you would be better off dead, or of hurting yourself",
+                              "value": "q9",
+                              "tooltip": ""
+                            }
+                          ],
+                          "values": [
+                            {
+                              "label": "Not at all",
+                              "value": "0",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "Several Days",
+                              "value": "1",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "More than half the days",
+                              "value": "2",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "Nearly every day",
+                              "value": "3",
+                              "tooltip": ""
+                            }
+                          ],
+                          "validate": {
+                            "required": true
                           },
-                          {
-                            "label": "<b>Initial Diagnosis</b>",
-                            "autoExpand": false,
-                            "disabled": true,
-                            "tableView": true,
-                            "calculateValue": "diagnosis = \"\";\nvalues = Object.values(data.survey);\ngrays = values.filter(value => value > 1);\ncount = grays.length;\n\nif (data.survey.q9 == 1) {\n  count += 1;\n}\n\nif (data.survey.q1 > 1 || data.survey.q2 > 1) {\n    if (count >= 5) {\n        diagnosis = \"Consider a major depressive disorder\";\n    } else if (count >= 2 && count <= 4) {\n        diagnosis = \"Consider other depressive disorder\";\n    }\n} else if (count >= 4) {\n    diagnosis = \"Consider a depressive disorder\";\n} else {\n    diagnosis = \"Score suggests a depressive disorder does not need to be considered\";\n}\n\nvalue = diagnosis;",
-                            "key": "initialDiagnosis",
-                            "type": "textarea",
-                            "rows": 1,
-                            "input": true
+                          "key": "survey",
+                          "type": "survey",
+                          "input": true
+                        }
+                      ]
+                    },
+                    {
+                      "label": "Additional field",
+                      "hideLabel": true,
+                      "key": "additionalField",
+                      "type": "well",
+                      "input": false,
+                      "tableView": false,
+                      "components": [
+                        {
+                          "label": "Survey 2",
+                          "hideLabel": true,
+                          "tableView": false,
+                          "questions": [
+                            {
+                              "label": "10. If you checked off <em>any questions</em>, how <em>difficult</em> have these problems made it for you to do you work, take care of things at home, or get along with other people?",
+                              "value": "q10",
+                              "tooltip": ""
+                            }
+                          ],
+                          "values": [
+                            {
+                              "label": "Not difficult at all",
+                              "value": "notDifficultAtAll",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "Somewhat difficult",
+                              "value": "somewhatDifficult",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "Very difficult",
+                              "value": "veryDifficult",
+                              "tooltip": ""
+                            },
+                            {
+                              "label": "Extremely difficult",
+                              "value": "extremelyDifficult",
+                              "tooltip": ""
+                            }
+                          ],
+                          "validate": {
+                            "required": true
                           },
-                          {
-                            "label": "<b>Depression Severity</b>",
-                            "autoExpand": false,
-                            "disabled": true,
-                            "tableView": true,
-                            "calculateValue": "severity = \"\"\n\nif (data.total == 0) {\n  severity = \"Score is below the minimum depression severity scale\"\n} else if (data.total >= 1 && data.total <= 4) {\n  severity = \"Minimal depression\"\n} else if (data.total >= 5 && data.total <= 9) {\n  severity = \"Mild depression\"\n} else if (data.total >= 10 && data.total <= 14) {\n  severity = \"Moderate depression\"\n} else if (data.total >= 15 && data.total <= 19) {\n  severity = \"Moderately severe depression\"\n} else if (data.total >= 20 && data.total <= 27) {\n  severity = \"Severe depression\"\n}\n\nvalue = severity",
-                            "key": "depressionSeverity",
-                            "type": "textarea",
-                            "rows": 1,
-                            "input": true
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "label": "Notes",
-                    "attrs": [
-                      {
-                        "attr": "",
-                        "value": ""
-                      }
-                    ],
-                    "content": "<b>Note:</b> Since the questionnaire relies on patient self-report, all responses should be verified by the clinician,\nand a definitive diagnosis is made on clinical grounds taking into account how well the patient understood\nthe questionnaire, as well as other relevant information from the patient.\nDiagnoses of Major Depressive Disorder or Other Depressive Disorder also require impairment of social,\noccupational, or other important areas of functioning (Question #10) and ruling out normal bereavement, a\nhistory of a Manic Episode (Bipolar Disorder), and a physical disorder, medication, or other drug as the\nbiological cause of the depressive symptoms.<br><br>To monitor severity over time for newly diagnosed patients or patients in current treatment for\ndepression, patients may complete questionnaires at baseline and at regular intervals (eg, every 2 weeks) at\nhome and bring them in at their next appointment for scoring or they may complete the\nquestionnaire during each scheduled appointment. ",
-                    "refreshOnChange": false,
-                    "key": "notes",
-                    "type": "htmlelement",
-                    "input": false,
-                    "tableView": false
-                  }
-                ]
-              },
-              {
-                "label": "Submit",
-                "showValidations": false,
-                "disableOnInvalid": true,
-                "tableView": false,
-                "key": "submit",
-                "type": "button",
-                "saveOnEnter": false,
-                "input": true
-              }
-            ]
-          },
-          {
-            "label": "Score Card",
-            "key": "scoreCard",
-            "components": [
-              {
-                "label": "Score Card Header",
-                "tag": "h1",
-                "className": "bg-primary text-white",
-                "attrs": [
-                  {
-                    "attr": "align",
-                    "value": "center"
-                  }
-                ],
-                "content": "<br>Scoring Criteria<br><br>",
-                "refreshOnChange": false,
-                "key": "scoreCardHeader",
-                "type": "htmlelement",
-                "input": false,
-                "tableView": false
-              },
-              {
-                "label": "Gray Zone Container",
-                "key": "grayZoneContainer",
-                "type": "well",
-                "input": false,
-                "tableView": false,
-                "components": [
-                  {
-                    "label": "Gray Zone Answers",
-                    "tag": "h4",
-                    "attrs": [
-                      {
-                        "attr": "",
-                        "value": ""
-                      }
-                    ],
-                    "content": "Gray Zone Answers",
-                    "refreshOnChange": false,
-                    "key": "grayZoneAnswers",
-                    "type": "htmlelement",
-                    "input": false,
-                    "tableView": false
-                  },
-                  {
-                    "html": "<figure class=\"table\"><table><tbody><tr><td><p style=\"text-align:center;\"><strong>Question</strong></p></td><td><p style=\"margin-left:40px;\"><strong>Answers</strong></p></td></tr><tr><td><p style=\"text-align:center;\">Questions 1-8</p></td><td><ul><li>More than half the days</li><li>Nearly every day</li></ul></td></tr><tr><td><p style=\"text-align:center;\">Question 9</p></td><td><ul><li>Several days</li><li>More than half the days</li><li>Nearly every day</li></ul></td></tr></tbody></table></figure>",
-                    "label": "Content",
-                    "refreshOnChange": false,
-                    "key": "contentGrayZone",
-                    "type": "content",
-                    "input": false,
-                    "tableView": false
-                  }
-                ]
-              },
-              {
-                "label": "Diagnosis Container",
-                "key": "diagnosisContainer",
-                "type": "well",
-                "input": false,
-                "tableView": false,
-                "components": [
-                  {
-                    "label": "Diagnosis Header",
-                    "tag": "h4",
-                    "attrs": [
-                      {
-                        "attr": "",
-                        "value": ""
-                      }
-                    ],
-                    "content": "Initial Diagnosis",
-                    "refreshOnChange": false,
-                    "key": "diagnosisHeader",
-                    "type": "htmlelement",
-                    "input": false,
-                    "tableView": false
-                  },
-                  {
-                    "html": "<ol><li>If at least 4 answers are in the gray zone section above (including Questions 1 and 2), <strong>consider a depressive disorder</strong>.</li><li>If at least 5 answers are in the gray zone section above (one of which corresponds to Question 1 or 2), <strong>consider a major depressive disorder</strong>.</li><li>If 2-4 of the answers are in the gray zone section above (one of which corresponds to Question 1 or 2), <strong>consider other depressive disorder.</strong></li></ol>",
-                    "label": "Content",
-                    "refreshOnChange": false,
-                    "key": "contentDiagnosis",
-                    "type": "content",
-                    "input": false,
-                    "tableView": false
-                  }
-                ]
-              },
-              {
-                "label": "Severity Container",
-                "key": "severityContainer",
-                "type": "well",
-                "input": false,
-                "tableView": false,
-                "components": [
-                  {
-                    "label": "Severity Header",
-                    "tag": "h4",
-                    "attrs": [
-                      {
-                        "attr": "",
-                        "value": ""
-                      }
-                    ],
-                    "content": "Interpretation of Total Score",
-                    "refreshOnChange": false,
-                    "key": "severityHeader",
-                    "type": "htmlelement",
-                    "input": false,
-                    "tableView": false
-                  },
-                  {
-                    "html": "<figure class=\"table\"><table><tbody><tr><td><p style=\"text-align:center;\"><strong>Total Score</strong></p></td><td><strong>Depression Severity</strong></td></tr><tr><td><p style=\"text-align:center;\">1 - 4</p></td><td>Minimal depression</td></tr><tr><td><p style=\"text-align:center;\">5 - 9</p></td><td>Mild depression</td></tr><tr><td><p style=\"text-align:center;\">10 - 14</p></td><td>Moderate depression</td></tr><tr><td><p style=\"text-align:center;\">15 - 19</p></td><td>Moderately severe depression</td></tr><tr><td><p style=\"text-align:center;\">20 - 27</p></td><td>Severe depression</td></tr></tbody></table></figure>",
-                    "label": "Content",
-                    "refreshOnChange": false,
-                    "key": "contentSeverity",
-                    "type": "content",
-                    "input": false,
-                    "tableView": false
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "key": "tabs",
-        "type": "tabs",
-        "input": false,
-        "tableView": false
-      }
-    ]
-  }
+                          "key": "survey2",
+                          "type": "survey",
+                          "input": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "View Results",
+              "theme": "success",
+              "collapsible": true,
+              "key": "phq9Form",
+              "type": "panel",
+              "label": "Panel",
+              "collapsed": true,
+              "input": false,
+              "tableView": false,
+              "components": [
+                {
+                  "legend": "Results",
+                  "key": "fieldSet2",
+                  "type": "fieldset",
+                  "label": "Field Set",
+                  "input": false,
+                  "tableView": false,
+                  "components": [
+                    {
+                      "label": "Note",
+                      "attrs": [
+                        {
+                          "attr": "",
+                          "value": ""
+                        }
+                      ],
+                      "content": "<em>Healthcare professional: Interpretation of the total score is determined based off the accompanying score card for reference.</em>",
+                      "refreshOnChange": false,
+                      "key": "note",
+                      "type": "htmlelement",
+                      "input": false,
+                      "tableView": false
+                    },
+                    {
+                      "label": "Results",
+                      "key": "results2",
+                      "type": "well",
+                      "input": false,
+                      "tableView": false,
+                      "components": [
+                        {
+                          "label": "<b>Total Score</b>",
+                          "autoExpand": false,
+                          "spellcheck": false,
+                          "disabled": true,
+                          "tableView": true,
+                          "key": "total",
+                          "logic": [
+                            {
+                              "name": "Survey Validation",
+                              "trigger": {
+                                "type": "javascript",
+                                "javascript": "isValid = false;\nquestions = [\"q1\", \"q2\", \"q3\", \"q4\", \"q5\", \"q6\", \"q7\", \"q8\", \"q9\"];\n\nfor (const i of questions) {\n  if (data.survey.hasOwnProperty(i)) {\n    isValid = true;\n  } else {\n    isValid = false;\n    break;\n  }\n}\n\nresult = (isValid);"
+                              },
+                              "actions": [
+                                {
+                                  "name": "Calculate Score",
+                                  "type": "value",
+                                  "value": "total = 0;\n\nif (isValid) {\n  for (const i in data.survey) {\n    total += parseInt(data.survey[i]);\n  }\n}\n\nvalue = String(total);"
+                                }
+                              ]
+                            }
+                          ],
+                          "type": "textarea",
+                          "rows": 1,
+                          "input": true
+                        },
+                        {
+                          "label": "<b>Initial Diagnosis</b>",
+                          "autoExpand": false,
+                          "disabled": true,
+                          "tableView": true,
+                          "key": "initialDiagnosis",
+                          "logic": [
+                            {
+                              "name": "Survey Validation",
+                              "trigger": {
+                                "type": "javascript",
+                                "javascript": "isValid = false;\nquestions = [\"q1\", \"q2\", \"q3\", \"q4\", \"q5\", \"q6\", \"q7\", \"q8\", \"q9\"];\n\nfor (const i of questions) {\n  if (data.survey.hasOwnProperty(i)) {\n    isValid = true;\n  } else {\n    isValid = false;\n    break;\n  }\n}\n\nresult = (isValid);"
+                              },
+                              "actions": [
+                                {
+                                  "name": "Calculate Diagnosis",
+                                  "type": "value",
+                                  "value": "diagnosis = \"\";\nvalues = Object.values(data.survey);\ngrays = values.filter(value => value > 1);\ncount = grays.length;\n\nif (data.survey.q9 == 1) {\n  count += 1;\n}\n\nif (data.survey.q1 > 1 || data.survey.q2 > 1) {\n    if (count >= 5) {\n        diagnosis = \"Consider a major depressive disorder\";\n    } else if (count >= 2 && count <= 4) {\n        diagnosis = \"Consider other depressive disorder\";\n    }\n} else if (count >= 4) {\n    diagnosis = \"Consider a depressive disorder\";\n} else {\n    diagnosis = \"Score suggests a depressive disorder does not need to be considered\";\n}\n\nvalue = diagnosis;"
+                                }
+                              ]
+                            }
+                          ],
+                          "type": "textarea",
+                          "rows": 1,
+                          "input": true
+                        },
+                        {
+                          "label": "<b>Depression Severity</b>",
+                          "autoExpand": false,
+                          "disabled": true,
+                          "tableView": true,
+                          "key": "depressionSeverity",
+                          "logic": [
+                            {
+                              "name": "Survey Logic",
+                              "trigger": {
+                                "type": "javascript",
+                                "javascript": "isValid = false;\nquestions = [\"q1\", \"q2\", \"q3\", \"q4\", \"q5\", \"q6\", \"q7\", \"q8\", \"q9\"];\n\nfor (const i of questions) {\n  if (data.survey.hasOwnProperty(i)) {\n    isValid = true;\n  } else {\n    isValid = false;\n    break;\n  }\n}\n\nresult = (isValid);"
+                              },
+                              "actions": [
+                                {
+                                  "name": "Calculate Severity",
+                                  "type": "value",
+                                  "value": "severity = \"\"\n\nif (data.total == 0) {\n  severity = \"Score is below the minimum depression severity scale\"\n} else if (data.total >= 1 && data.total <= 4) {\n  severity = \"Minimal depression\"\n} else if (data.total >= 5 && data.total <= 9) {\n  severity = \"Mild depression\"\n} else if (data.total >= 10 && data.total <= 14) {\n  severity = \"Moderate depression\"\n} else if (data.total >= 15 && data.total <= 19) {\n  severity = \"Moderately severe depression\"\n} else if (data.total >= 20 && data.total <= 27) {\n  severity = \"Severe depression\"\n}\n\nvalue = severity"
+                                }
+                              ]
+                            }
+                          ],
+                          "type": "textarea",
+                          "rows": 1,
+                          "input": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "Notes",
+                  "attrs": [
+                    {
+                      "attr": "",
+                      "value": ""
+                    }
+                  ],
+                  "content": "<b>Note:</b> Since the questionnaire relies on patient self-report, all responses should be verified by the clinician,\nand a definitive diagnosis is made on clinical grounds taking into account how well the patient understood\nthe questionnaire, as well as other relevant information from the patient.\nDiagnoses of Major Depressive Disorder or Other Depressive Disorder also require impairment of social,\noccupational, or other important areas of functioning (Question #10) and ruling out normal bereavement, a\nhistory of a Manic Episode (Bipolar Disorder), and a physical disorder, medication, or other drug as the\nbiological cause of the depressive symptoms.<br><br>To monitor severity over time for newly diagnosed patients or patients in current treatment for\ndepression, patients may complete questionnaires at baseline and at regular intervals (eg, every 2 weeks) at\nhome and bring them in at their next appointment for scoring or they may complete the\nquestionnaire during each scheduled appointment. ",
+                  "refreshOnChange": false,
+                  "key": "notes",
+                  "type": "htmlelement",
+                  "input": false,
+                  "tableView": false
+                }
+              ]
+            },
+            {
+              "label": "Submit",
+              "showValidations": false,
+              "disableOnInvalid": true,
+              "tableView": false,
+              "key": "submit",
+              "type": "button",
+              "saveOnEnter": false,
+              "input": true
+            }
+          ]
+        },
+        {
+          "label": "Score Card",
+          "key": "scoreCard",
+          "components": [
+            {
+              "label": "Score Card Header",
+              "tag": "h1",
+              "className": "bg-primary text-white",
+              "attrs": [
+                {
+                  "attr": "align",
+                  "value": "center"
+                }
+              ],
+              "content": "<br>Scoring Criteria<br><br>",
+              "refreshOnChange": false,
+              "key": "scoreCardHeader",
+              "type": "htmlelement",
+              "input": false,
+              "tableView": false
+            },
+            {
+              "label": "Gray Zone Container",
+              "key": "grayZoneContainer",
+              "type": "well",
+              "input": false,
+              "tableView": false,
+              "components": [
+                {
+                  "label": "Gray Zone Answers",
+                  "tag": "h4",
+                  "attrs": [
+                    {
+                      "attr": "",
+                      "value": ""
+                    }
+                  ],
+                  "content": "Gray Zone Answers",
+                  "refreshOnChange": false,
+                  "key": "grayZoneAnswers",
+                  "type": "htmlelement",
+                  "input": false,
+                  "tableView": false
+                },
+                {
+                  "html": "<figure class=\"table\"><table><tbody><tr><td><p style=\"text-align:center;\"><strong>Question</strong></p></td><td><p style=\"margin-left:40px;\"><strong>Answers</strong></p></td></tr><tr><td><p style=\"text-align:center;\">Questions 1-8</p></td><td><ul><li>More than half the days</li><li>Nearly every day</li></ul></td></tr><tr><td><p style=\"text-align:center;\">Question 9</p></td><td><ul><li>Several days</li><li>More than half the days</li><li>Nearly every day</li></ul></td></tr></tbody></table></figure>",
+                  "label": "Content",
+                  "refreshOnChange": false,
+                  "key": "contentGrayZone",
+                  "type": "content",
+                  "input": false,
+                  "tableView": false
+                }
+              ]
+            },
+            {
+              "label": "Diagnosis Container",
+              "key": "diagnosisContainer",
+              "type": "well",
+              "input": false,
+              "tableView": false,
+              "components": [
+                {
+                  "label": "Diagnosis Header",
+                  "tag": "h4",
+                  "attrs": [
+                    {
+                      "attr": "",
+                      "value": ""
+                    }
+                  ],
+                  "content": "Initial Diagnosis",
+                  "refreshOnChange": false,
+                  "key": "diagnosisHeader",
+                  "type": "htmlelement",
+                  "input": false,
+                  "tableView": false
+                },
+                {
+                  "html": "<ol><li>If at least 4 answers are in the gray zone section above (including Questions 1 and 2), <strong>consider a depressive disorder</strong>.</li><li>If at least 5 answers are in the gray zone section above (one of which corresponds to Question 1 or 2), <strong>consider a major depressive disorder</strong>.</li><li>If 2-4 of the answers are in the gray zone section above (one of which corresponds to Question 1 or 2), <strong>consider other depressive disorder.</strong></li></ol>",
+                  "label": "Content",
+                  "refreshOnChange": false,
+                  "key": "contentDiagnosis",
+                  "type": "content",
+                  "input": false,
+                  "tableView": false
+                }
+              ]
+            },
+            {
+              "label": "Severity Container",
+              "key": "severityContainer",
+              "type": "well",
+              "input": false,
+              "tableView": false,
+              "components": [
+                {
+                  "label": "Severity Header",
+                  "tag": "h4",
+                  "attrs": [
+                    {
+                      "attr": "",
+                      "value": ""
+                    }
+                  ],
+                  "content": "Interpretation of Total Score",
+                  "refreshOnChange": false,
+                  "key": "severityHeader",
+                  "type": "htmlelement",
+                  "input": false,
+                  "tableView": false
+                },
+                {
+                  "html": "<figure class=\"table\"><table><tbody><tr><td><p style=\"text-align:center;\"><strong>Total Score</strong></p></td><td><strong>Depression Severity</strong></td></tr><tr><td><p style=\"text-align:center;\">1 - 4</p></td><td>Minimal depression</td></tr><tr><td><p style=\"text-align:center;\">5 - 9</p></td><td>Mild depression</td></tr><tr><td><p style=\"text-align:center;\">10 - 14</p></td><td>Moderate depression</td></tr><tr><td><p style=\"text-align:center;\">15 - 19</p></td><td>Moderately severe depression</td></tr><tr><td><p style=\"text-align:center;\">20 - 27</p></td><td>Severe depression</td></tr></tbody></table></figure>",
+                  "label": "Content",
+                  "refreshOnChange": false,
+                  "key": "contentSeverity",
+                  "type": "content",
+                  "input": false,
+                  "tableView": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "key": "tabs",
+      "type": "tabs",
+      "input": false,
+      "tableView": false
+    }
+  ]
+}
