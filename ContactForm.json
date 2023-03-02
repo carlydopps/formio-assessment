@@ -1,0 +1,136 @@
+{
+  "display": "form",
+  "components": [
+    {
+      "title": "Contact Information",
+      "theme": "primary",
+      "collapsible": false,
+      "key": "patientInformation",
+      "type": "panel",
+      "label": "Panel",
+      "input": false,
+      "tableView": false,
+      "components": [
+        {
+          "label": "First Name",
+          "placeholder": "Enter first name",
+          "autofocus": true,
+          "spellcheck": false,
+          "tableView": true,
+          "validate": {
+            "required": true
+          },
+          "errorLabel": "First name",
+          "key": "firstName",
+          "type": "textfield",
+          "input": true
+        },
+        {
+          "label": "Last Name",
+          "placeholder": "Enter last name",
+          "spellcheck": false,
+          "tableView": true,
+          "validate": {
+            "required": true
+          },
+          "errorLabel": "Last name",
+          "key": "lastName",
+          "type": "textfield",
+          "input": true
+        },
+        {
+          "label": "Email",
+          "placeholder": "Enter email address",
+          "tooltip": "Must provide an email address or a phone number.",
+          "spellcheck": false,
+          "tableView": true,
+          "unique": true,
+          "kickbox": {
+            "enabled": true
+          },
+          "errorLabel": "Email",
+          "key": "email",
+          "type": "email",
+          "input": true
+        },
+        {
+          "label": "Phone Number",
+          "tooltip": "Must provide an email address or a phone number.",
+          "spellcheck": false,
+          "tableView": true,
+          "unique": true,
+          "key": "phoneNumber",
+          "type": "phoneNumber",
+          "input": true
+        },
+        {
+          "label": "Date of Birth",
+          "hideInputLabels": false,
+          "inputsLabelPosition": "top",
+          "useLocaleSettings": false,
+          "tableView": true,
+          "fields": {
+            "day": {
+              "placeholder": "Enter day",
+              "hide": false,
+              "required": true
+            },
+            "month": {
+              "placeholder": "Select month",
+              "hide": false,
+              "required": true
+            },
+            "year": {
+              "placeholder": "Enter year",
+              "hide": false,
+              "required": true
+            }
+          },
+          "defaultValue": "00/00/0000",
+          "errorLabel": "Month / day / year",
+          "errors": {
+            "invalid_day": "Please enter a valid date."
+          },
+          "key": "dateOfBirth",
+          "type": "day",
+          "input": true
+        },
+        {
+          "label": "Submit",
+          "showValidations": false,
+          "theme": "success",
+          "size": "lg",
+          "tooltip": "Confirm that all required fields, including either email or phone phone, are provided.",
+          "disableOnInvalid": true,
+          "disabled": true,
+          "tableView": false,
+          "key": "submit",
+          "logic": [
+            {
+              "name": "Email Phone Conditional",
+              "trigger": {
+                "type": "javascript",
+                "javascript": "result = (data.email !== \"\" || data.phoneNumber !== \"\");"
+              },
+              "actions": [
+                {
+                  "name": "Enable Submit",
+                  "type": "property",
+                  "property": {
+                    "label": "Disabled",
+                    "value": "disabled",
+                    "type": "boolean"
+                  },
+                  "state": false
+                }
+              ]
+            }
+          ],
+          "type": "button",
+          "saveOnEnter": false,
+          "input": true
+        }
+      ]
+    }
+  ]
+}
