@@ -1,0 +1,217 @@
+{
+    "display": "wizard",
+    "components": [
+      {
+        "title": "Contact Form",
+        "breadcrumbClickable": true,
+        "buttonSettings": {
+          "previous": true,
+          "cancel": true,
+          "next": true
+        },
+        "navigateOnEnter": false,
+        "saveOnEnter": false,
+        "scrollToTop": false,
+        "collapsible": false,
+        "key": "patientInformation",
+        "type": "panel",
+        "label": "Panel",
+        "input": false,
+        "tableView": false,
+        "components": [
+          {
+            "title": "Contact Information",
+            "theme": "primary",
+            "collapsible": false,
+            "key": "contactInfoPanel",
+            "type": "panel",
+            "label": "Panel",
+            "input": false,
+            "tableView": false,
+            "components": [
+              {
+                "label": "First Name",
+                "placeholder": "Enter first name",
+                "autofocus": true,
+                "spellcheck": false,
+                "tableView": true,
+                "validate": {
+                  "required": true
+                },
+                "errorLabel": "First name",
+                "key": "firstName",
+                "type": "textfield",
+                "input": true
+              },
+              {
+                "label": "Last Name",
+                "placeholder": "Enter last name",
+                "spellcheck": false,
+                "tableView": true,
+                "validate": {
+                  "required": true
+                },
+                "errorLabel": "Last name",
+                "key": "lastName",
+                "type": "textfield",
+                "input": true
+              },
+              {
+                "label": "Email",
+                "placeholder": "Enter email address",
+                "spellcheck": false,
+                "tableView": true,
+                "validate": {
+                  "required": true
+                },
+                "unique": true,
+                "kickbox": {
+                  "enabled": true
+                },
+                "errorLabel": "Email",
+                "key": "email",
+                "type": "email",
+                "input": true
+              },
+              {
+                "label": "Phone Number",
+                "spellcheck": false,
+                "tableView": true,
+                "validate": {
+                  "required": true
+                },
+                "unique": true,
+                "key": "phoneNumber",
+                "type": "phoneNumber",
+                "input": true
+              },
+              {
+                "label": "Date of Birth",
+                "hideInputLabels": false,
+                "inputsLabelPosition": "top",
+                "useLocaleSettings": false,
+                "tableView": true,
+                "fields": {
+                  "day": {
+                    "placeholder": "Enter day",
+                    "hide": false,
+                    "required": true
+                  },
+                  "month": {
+                    "placeholder": "Select month",
+                    "hide": false,
+                    "required": true
+                  },
+                  "year": {
+                    "placeholder": "Enter year",
+                    "hide": false,
+                    "required": true
+                  }
+                },
+                "defaultValue": "00/00/0000",
+                "errorLabel": "Month / day / year",
+                "errors": {
+                  "invalid_day": "Please enter a valid date."
+                },
+                "key": "dateOfBirth",
+                "type": "day",
+                "input": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Review",
+        "theme": "primary",
+        "breadcrumbClickable": true,
+        "buttonSettings": {
+          "previous": true,
+          "cancel": true,
+          "next": true
+        },
+        "navigateOnEnter": false,
+        "saveOnEnter": false,
+        "scrollToTop": false,
+        "collapsible": false,
+        "disabled": true,
+        "key": "patientInformation1",
+        "type": "panel",
+        "label": "Panel",
+        "input": false,
+        "tableView": false,
+        "readOnly": true,
+        "components": [
+          {
+            "label": "First Name",
+            "autoExpand": false,
+            "spellcheck": false,
+            "tableView": false,
+            "persistent": "client-only",
+            "customDefaultValue": "value = data.firstName",
+            "key": "firstNameRO",
+            "type": "textarea",
+            "rows": 1,
+            "input": true
+          },
+          {
+            "label": "Last Name",
+            "autoExpand": false,
+            "tableView": true,
+            "customDefaultValue": "value = data.lastName",
+            "key": "lastNameRO",
+            "type": "textarea",
+            "rows": 1,
+            "input": true,
+            "persistent": "client-only"
+          },
+          {
+            "label": "Email",
+            "autoExpand": false,
+            "tableView": true,
+            "persistent": "client-only",
+            "customDefaultValue": "value = '<a href=\"mailto:{{data.email}}\">{{data.email}}</a>';",
+            "key": "emailRO",
+            "type": "textarea",
+            "rows": 1,
+            "input": true
+          },
+          {
+            "label": "Phone Number",
+            "autoExpand": false,
+            "tableView": true,
+            "persistent": "client-only",
+            "customDefaultValue": "value = data.phoneNumber",
+            "key": "phoneNumberRO",
+            "type": "textarea",
+            "input": true
+          },
+          {
+            "label": "Age",
+            "suffix": "years old",
+            "spellcheck": false,
+            "tableView": true,
+            "key": "age2",
+            "logic": [
+              {
+                "name": "DOB Conditional",
+                "trigger": {
+                  "type": "javascript",
+                  "javascript": "result = (data.dateOfBirth !== \"00/00/0000\");"
+                },
+                "actions": [
+                  {
+                    "name": "Calculate Age",
+                    "type": "value",
+                    "value": "let today = new Date().toLocaleDateString();\ntoday = today.split('/');\nlet dob = data.dateOfBirth.split('/');\n\nlet age = today[2] - dob[2];\nif (parseInt(today[0]) < parseInt(dob[0])) {\n  age -= 1;\n} else if (parseInt(today[0]) == parseInt(dob[0]) & parseInt(today[1]) < parseInt(dob[1])) {\n  age -= 1;\n}\n\nvalue = age;"
+                  }
+                ]
+              }
+            ],
+            "type": "textfield",
+            "input": true
+          }
+        ]
+      }
+    ]
+  }
